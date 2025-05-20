@@ -225,7 +225,7 @@ const Search = () => {
                   <div className="space-y-2">
                     <label className="text-sm font-medium">Experience Level</label>
                     <Select value={experienceValue} onValueChange={setExperienceValue}>
-                      <SelectTrigger>
+                      <SelectTrigger className="w-full">
                         <SelectValue placeholder="Select experience level" />
                       </SelectTrigger>
                       <SelectContent>
