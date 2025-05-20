@@ -5,7 +5,7 @@ import { AppSidebar } from "@/components/AppSidebar";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
-import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem } from "@/components/ui/command";
+import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from "@/components/ui/command";
 import { Card, CardContent } from "@/components/ui/card";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Check, ChevronsUpDown, Search as SearchIcon } from "lucide-react";
@@ -104,27 +104,29 @@ const Search = () => {
                       <PopoverContent className="w-full p-0">
                         <Command>
                           <CommandInput placeholder="Search roles..." />
-                          <CommandEmpty>No role found.</CommandEmpty>
-                          <CommandGroup>
-                            {roles.map((role) => (
-                              <CommandItem
-                                key={role.value}
-                                value={role.value}
-                                onSelect={(currentValue) => {
-                                  setRoleValue(currentValue === roleValue ? "" : currentValue);
-                                  setRoleOpen(false);
-                                }}
-                              >
-                                <Check
-                                  className={cn(
-                                    "mr-2 h-4 w-4",
-                                    roleValue === role.value ? "opacity-100" : "opacity-0"
-                                  )}
-                                />
-                                {role.label}
-                              </CommandItem>
-                            ))}
-                          </CommandGroup>
+                          <CommandList>
+                            <CommandEmpty>No role found.</CommandEmpty>
+                            <CommandGroup>
+                              {roles.map((role) => (
+                                <CommandItem
+                                  key={role.value}
+                                  value={role.value}
+                                  onSelect={(currentValue) => {
+                                    setRoleValue(currentValue === roleValue ? "" : currentValue);
+                                    setRoleOpen(false);
+                                  }}
+                                >
+                                  <Check
+                                    className={cn(
+                                      "mr-2 h-4 w-4",
+                                      roleValue === role.value ? "opacity-100" : "opacity-0"
+                                    )}
+                                  />
+                                  {role.label}
+                                </CommandItem>
+                              ))}
+                            </CommandGroup>
+                          </CommandList>
                         </Command>
                       </PopoverContent>
                     </Popover>
@@ -149,27 +151,29 @@ const Search = () => {
                       <PopoverContent className="w-full p-0">
                         <Command>
                           <CommandInput placeholder="Search technologies..." />
-                          <CommandEmpty>No technology found.</CommandEmpty>
-                          <CommandGroup>
-                            {technologies.map((tech) => (
-                              <CommandItem
-                                key={tech.value}
-                                value={tech.value}
-                                onSelect={(currentValue) => {
-                                  setTechValue(currentValue === techValue ? "" : currentValue);
-                                  setTechOpen(false);
-                                }}
-                              >
-                                <Check
-                                  className={cn(
-                                    "mr-2 h-4 w-4",
-                                    techValue === tech.value ? "opacity-100" : "opacity-0"
-                                  )}
-                                />
-                                {tech.label}
-                              </CommandItem>
-                            ))}
-                          </CommandGroup>
+                          <CommandList>
+                            <CommandEmpty>No technology found.</CommandEmpty>
+                            <CommandGroup>
+                              {technologies.map((tech) => (
+                                <CommandItem
+                                  key={tech.value}
+                                  value={tech.value}
+                                  onSelect={(currentValue) => {
+                                    setTechValue(currentValue === techValue ? "" : currentValue);
+                                    setTechOpen(false);
+                                  }}
+                                >
+                                  <Check
+                                    className={cn(
+                                      "mr-2 h-4 w-4",
+                                      techValue === tech.value ? "opacity-100" : "opacity-0"
+                                    )}
+                                  />
+                                  {tech.label}
+                                </CommandItem>
+                              ))}
+                            </CommandGroup>
+                          </CommandList>
                         </Command>
                       </PopoverContent>
                     </Popover>
@@ -196,27 +200,29 @@ const Search = () => {
                       <PopoverContent className="w-full p-0">
                         <Command>
                           <CommandInput placeholder="Search locations..." />
-                          <CommandEmpty>No location found.</CommandEmpty>
-                          <CommandGroup>
-                            {locations.map((location) => (
-                              <CommandItem
-                                key={location.value}
-                                value={location.value}
-                                onSelect={(currentValue) => {
-                                  setLocationValue(currentValue === locationValue ? "" : currentValue);
-                                  setLocationOpen(false);
-                                }}
-                              >
-                                <Check
-                                  className={cn(
-                                    "mr-2 h-4 w-4",
-                                    locationValue === location.value ? "opacity-100" : "opacity-0"
-                                  )}
-                                />
-                                {location.label}
-                              </CommandItem>
-                            ))}
-                          </CommandGroup>
+                          <CommandList>
+                            <CommandEmpty>No location found.</CommandEmpty>
+                            <CommandGroup>
+                              {locations.map((location) => (
+                                <CommandItem
+                                  key={location.value}
+                                  value={location.value}
+                                  onSelect={(currentValue) => {
+                                    setLocationValue(currentValue === locationValue ? "" : currentValue);
+                                    setLocationOpen(false);
+                                  }}
+                                >
+                                  <Check
+                                    className={cn(
+                                      "mr-2 h-4 w-4",
+                                      locationValue === location.value ? "opacity-100" : "opacity-0"
+                                    )}
+                                  />
+                                  {location.label}
+                                </CommandItem>
+                              ))}
+                            </CommandGroup>
+                          </CommandList>
                         </Command>
                       </PopoverContent>
                     </Popover>
